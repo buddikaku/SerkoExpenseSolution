@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Api", "SerkoExpense.Api\SerkoExpense.Api.csproj", "{09D93BBB-BEEB-49A4-BB11-4CFDA4E07A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Business", "SerkoExpense.Business\SerkoExpense.Business.csproj", "{FE8FE3A3-3869-4280-9EC7-4A64E46DADFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.XmlParser", "SerkoExpense.XmlParser\SerkoExpense.XmlParser.csproj", "{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Common", "SerkoExpense.Common\SerkoExpense.Common.csproj", "{05853A18-99AF-41C4-9E99-CE45EC927501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Api.Test", "SerkoExpense.Api.Test\SerkoExpense.Api.Test.csproj", "{2A10F600-2E4B-48B4-A527-99C525210B84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artifacts", "Artifacts", "{D2D8D905-7810-45CA-A375-8BD515D19FEE}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+		Serko Expense API.pdf = Serko Expense API.pdf
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09D93BBB-BEEB-49A4-BB11-4CFDA4E07A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D93BBB-BEEB-49A4-BB11-4CFDA4E07A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D93BBB-BEEB-49A4-BB11-4CFDA4E07A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D93BBB-BEEB-49A4-BB11-4CFDA4E07A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8FE3A3-3869-4280-9EC7-4A64E46DADFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8FE3A3-3869-4280-9EC7-4A64E46DADFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8FE3A3-3869-4280-9EC7-4A64E46DADFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8FE3A3-3869-4280-9EC7-4A64E46DADFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05853A18-99AF-41C4-9E99-CE45EC927501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05853A18-99AF-41C4-9E99-CE45EC927501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05853A18-99AF-41C4-9E99-CE45EC927501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05853A18-99AF-41C4-9E99-CE45EC927501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A10F600-2E4B-48B4-A527-99C525210B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A10F600-2E4B-48B4-A527-99C525210B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A10F600-2E4B-48B4-A527-99C525210B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A10F600-2E4B-48B4-A527-99C525210B84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF09D50F-C778-42B1-98BA-6CF69C2A82A4}
+	EndGlobalSection
+EndGlobal
