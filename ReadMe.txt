@@ -21,6 +21,4 @@
 			</customHeaders>
 		</httpProtocol>
 
-	1.5 GST percentage under appSettings in app.config in SerkoExpense.Api.Test  if want to run test with different GST percentage
-
 2.Serko Expense API.pdf contains documentation about implementation
