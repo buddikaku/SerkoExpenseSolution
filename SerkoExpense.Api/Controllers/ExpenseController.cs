@@ -19,6 +19,7 @@ namespace SerkoExpense.Api.Controllers
         [HttpPost]
         public IHttpActionResult ImportData([FromBody]string emailInput)
         {
+            /// Invoke service and return response object
             return Ok(new ExpenseService().ImportData(emailInput));
         }
     }

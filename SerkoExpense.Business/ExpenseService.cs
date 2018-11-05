@@ -37,7 +37,7 @@ namespace SerkoExpense.Business
             double gstRate;
             if (double.TryParse(ConfigurationManager.AppSettings[Constants.AppSettings.Gst], out gstRate))
             {
-                return GenerateResponse(parserRespose, gstRate);
+                return GenerateSuccessResponse(parserRespose, gstRate);
             }
 
             /// Throw new exception when GST rate in not defined or unsupported.
@@ -48,13 +48,14 @@ namespace SerkoExpense.Business
 
         #region Private Methods
 
+
         /// <summary>
-        /// Generates the response.
+        /// Generates the success response.
         /// </summary>
         /// <param name="parserResponse">The parser response.</param>
         /// <param name="gstRate">The GST rate.</param>
-        /// <returns>The Response Object</returns>
-        private ImportResponse GenerateResponse(ParserResponse parserResponse, double gstRate)
+        /// <returns> ImportResponse object</returns>
+        private ImportResponse GenerateSuccessResponse(ParserResponse parserResponse, double gstRate)
         {
             /// Map response date and return. 
             return new ImportResponse

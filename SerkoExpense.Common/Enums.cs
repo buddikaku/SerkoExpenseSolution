@@ -31,7 +31,7 @@ namespace SerkoExpense.Common
         /// <summary>
         /// The invalid value
         /// </summary>
-        [Description("Rejected")]
+        [Description("Invalid value format")]
         InvalidValue
     }
 

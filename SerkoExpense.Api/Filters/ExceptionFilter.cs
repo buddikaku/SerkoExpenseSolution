@@ -21,6 +21,7 @@ namespace SerkoExpense.Api.Filters
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
             string exceptionMessage = string.Empty;
+            /// Get exception message.
             if (actionExecutedContext.Exception.InnerException == null)
             {
                 exceptionMessage = actionExecutedContext.Exception.Message;

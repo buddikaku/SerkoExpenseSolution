@@ -13,7 +13,7 @@ namespace SerkoExpense.Api
             /// Register global action filter
             config.Filters.Add(new ExceptionFilter());
 
-            // Web API routes
+            /// Web API routes
             config.MapHttpAttributeRoutes();
         }
     }
