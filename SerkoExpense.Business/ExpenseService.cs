@@ -1,5 +1,5 @@
 ﻿using SerkoExpense.Common;
-using SerkoExpense.XmlParser;
+using SerkoExpense.Parser;
 using System;
 using System.Configuration;
 
@@ -8,20 +8,37 @@ namespace SerkoExpense.Business
     /// <summary>
     /// Class: ExpenseService 
     /// </summary>
-    public class ExpenseService
+    public class ExpenseService: IService
     {
-        #region Public Method
-
+        #region Private Variables
         /// <summary>
-        /// Calculates the total.
+        /// The parser
+        /// </summary>
+        private IParser parser;
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExpenseService"/> class.
+        /// </summary>
+        /// <param name="parser">The parser.</param>
+        public ExpenseService(IParser parser)
+        {
+           this.parser  = parser;
+        }
+        #endregion
+
+        #region Public Method
+        /// <summary>
+        /// Imports the data.
         /// </summary>
         /// <param name="textInput">The text input.</param>
-        /// <param name="taxRate">The tax rate.</param>
-        /// <returns>ImportResponse</returns>
-        public ImportResponse ImportData(string emailInput)
+        /// <returns>ImportResponse object</returns>
+        /// <exception cref="Exception"></exception>
+        public ImportResponse ImportData(string textInput)
         {
-            /// Send the email content to xml parser and extract xml data.
-            var parserRespose = new XmlParser.XmlParser(emailInput).Parse();
+            /// Invoke xml parser parse method and extract xml data.
+            var parserRespose = this.parser.Parse(textInput);
 
             /// If XML parsing is failed, return the failed response with error message
             if (parserRespose.Status != Status.Success)

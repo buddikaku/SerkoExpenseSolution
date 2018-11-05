@@ -1,7 +1,7 @@
 ﻿using SerkoExpense.Common;
 using System.Xml.Serialization;
 
-namespace SerkoExpense.XmlParser
+namespace SerkoExpense.Parser
 {
     /// <summary>
     /// class: ReservationDataDTO

@@ -1,6 +1,6 @@
 ﻿using SerkoExpense.Common;
 
-namespace SerkoExpense.XmlParser
+namespace SerkoExpense.Parser
 {
     /// <summary>
     /// Class: ParserResponse

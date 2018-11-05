@@ -1,14 +1,26 @@
-﻿using System;
-using System.Web.Http.Results;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SerkoExpense.Api.Controllers;
+using SerkoExpense.Business;
 using SerkoExpense.Common;
+using SerkoExpense.Parser;
+using System.Web.Http.Results;
 
 namespace SerkoExpense.Api.Test
 {
     [TestClass]
     public class ExpenseApiTest
     {
+        private ExpenseController expenseController = null;
+
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            IParser parser = new XmlParser();
+            IService service = new ExpenseService(parser);
+            this.expenseController = new ExpenseController(service);
+        }
+
         [TestMethod]
         public void ImportData_ShouldRejectIfTotalTagIsMissing()
         {
@@ -31,8 +43,7 @@ namespace SerkoExpense.Api.Test
                                 Regards,
                                 Ivan";
 
-            var controller = new ExpenseController();
-            var response = controller.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
+            var response = this.expenseController.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
             Assert.AreEqual(false, response.Content.Success);
             Assert.AreEqual("Required tag missing", response.Content.Message);
         }
@@ -59,8 +70,7 @@ namespace SerkoExpense.Api.Test
                                 Regards,
                                 Ivan";
 
-            var controller = new ExpenseController();
-            var response = controller.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
+            var response = this.expenseController.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
             Assert.AreEqual(false, response.Content.Success);
             Assert.AreEqual("XML Formatting Error:Opening tag does not have a corresponding closing tag", response.Content.Message);
         }
@@ -87,8 +97,7 @@ namespace SerkoExpense.Api.Test
                                 Regards,
                                 Ivan";
 
-            var controller = new ExpenseController();
-            var response = controller.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
+            var response = this.expenseController.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
             Assert.AreEqual(true, response.Content.Success);
             Assert.AreEqual("UNKNOWN", response.Content.Reservation.Expense.CostCenter);
         }
@@ -116,8 +125,7 @@ namespace SerkoExpense.Api.Test
                                 Regards,
                                 Ivan";
 
-            var controller = new ExpenseController();
-            var response = controller.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
+            var response = this.expenseController.ImportData(emailContent) as OkNegotiatedContentResult<ImportResponse>;
             Assert.AreEqual(true, response.Content.Success);
             Assert.AreEqual("DEV002", response.Content.Reservation.Expense.CostCenter);
             Assert.AreEqual(1024.01, response.Content.Reservation.Expense.Total);

@@ -39,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -74,9 +75,17 @@
       <Project>{09D93BBB-BEEB-49A4-BB11-4CFDA4E07A86}</Project>
       <Name>SerkoExpense.Api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SerkoExpense.Business\SerkoExpense.Business.csproj">
+      <Project>{fe8fe3a3-3869-4280-9ec7-4a64e46dadfe}</Project>
+      <Name>SerkoExpense.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SerkoExpense.Common\SerkoExpense.Common.csproj">
-      <Project>{05853A18-99AF-41C4-9E99-CE45EC927501}</Project>
+      <Project>{05853a18-99af-41c4-9e99-ce45ec927501}</Project>
       <Name>SerkoExpense.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerkoExpense.XmlParser\SerkoExpense.Parser.csproj">
+      <Project>{b3ea57f3-eb87-48f6-8f1e-7e14eff949e7}</Project>
+      <Name>SerkoExpense.Parser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -14,6 +14,13 @@ namespace SerkoExpense.Api.Filters
     /// <seealso cref="System.Web.Http.Filters.ExceptionFilterAttribute" />
     public class ExceptionFilter : ExceptionFilterAttribute
     {
+        #region private variables
+        /// <summary>
+        /// The logger
+        /// </summary>
+        private ILog _logger;
+        #endregion
+
         /// <summary>
         /// Raises the exception event.
         /// </summary>
@@ -32,7 +39,7 @@ namespace SerkoExpense.Api.Filters
             }
 
             /// Log the exception. 
-            ILog _logger = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            _logger = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
             _logger.Error(exceptionMessage, actionExecutedContext.Exception);
 
             /// Handling the exception and return custom message

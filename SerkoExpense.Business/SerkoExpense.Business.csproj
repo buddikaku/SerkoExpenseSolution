@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpenseService.cs" />
+    <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,9 +51,9 @@
       <Project>{05853a18-99af-41c4-9e99-ce45ec927501}</Project>
       <Name>SerkoExpense.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SerkoExpense.XmlParser\SerkoExpense.XmlParser.csproj">
+    <ProjectReference Include="..\SerkoExpense.XmlParser\SerkoExpense.Parser.csproj">
       <Project>{b3ea57f3-eb87-48f6-8f1e-7e14eff949e7}</Project>
-      <Name>SerkoExpense.XmlParser</Name>
+      <Name>SerkoExpense.Parser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

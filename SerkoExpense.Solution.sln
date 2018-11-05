@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Api", "SerkoEx
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Business", "SerkoExpense.Business\SerkoExpense.Business.csproj", "{FE8FE3A3-3869-4280-9EC7-4A64E46DADFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.XmlParser", "SerkoExpense.XmlParser\SerkoExpense.XmlParser.csproj", "{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Parser", "SerkoExpense.XmlParser\SerkoExpense.Parser.csproj", "{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkoExpense.Common", "SerkoExpense.Common\SerkoExpense.Common.csproj", "{05853A18-99AF-41C4-9E99-CE45EC927501}"
 EndProject

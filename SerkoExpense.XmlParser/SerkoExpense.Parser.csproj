@@ -7,8 +7,8 @@
     <ProjectGuid>{B3EA57F3-EB87-48F6-8F1E-7E14EFF949E7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SerkoExpense.XmlParser</RootNamespace>
-    <AssemblyName>SerkoExpense.XmlParser</AssemblyName>
+    <RootNamespace>SerkoExpense.Parser</RootNamespace>
+    <AssemblyName>SerkoExpense.Parser</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationDTO.cs" />
     <Compile Include="ParserResponse.cs" />

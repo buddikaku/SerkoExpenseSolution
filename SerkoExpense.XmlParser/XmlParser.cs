@@ -4,33 +4,30 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-namespace SerkoExpense.XmlParser
+namespace SerkoExpense.Parser
 {
     /// <summary>
     /// class: XmlParser
     /// </summary>
-    public class XmlParser
+    public class XmlParser: IParser
     {
-        #region Constructor
-        private string emailContent;
-
+        #region Private Variables
         /// <summary>
-        /// Initializes a new instance of the <see cref="XmlParser"/> class.
+        /// The text content
         /// </summary>
-        /// <param name="emailContent">Content of the email.</param>
-        public XmlParser(string emailContent)
-        {
-            this.emailContent = emailContent;
-        }
+        private string textContent;
         #endregion
 
         #region Public Method        
+
         /// <summary>
-        /// Parses this xml.
+        /// Parses the specified text content.
         /// </summary>
+        /// <param name="textContent">Content of the text.</param>
         /// <returns>ParserResponse</returns>
-        public ParserResponse Parse()
+        public ParserResponse Parse(string textContent)
         {
+            this.textContent = textContent;
             ParserResponse response = new ParserResponse();
 
             Status parserstatus = Status.None;
@@ -93,7 +90,7 @@ namespace SerkoExpense.XmlParser
         private bool ValidateRequired(string element, out Status validationStatus)
         {
             ///check element exist
-            if (Regex.Match(this.emailContent, $@"<{element}>").Success)
+            if (Regex.Match(this.textContent, $@"<{element}>").Success)
             {
                 validationStatus = Status.Success;
                 return true;
@@ -111,10 +108,10 @@ namespace SerkoExpense.XmlParser
         private bool ValidateXmlFormat(string element, out Status validationStatus)
         {
             ///if opening tag available 
-            if (Regex.Match(this.emailContent, $@"<{element}>").Success)
+            if (Regex.Match(this.textContent, $@"<{element}>").Success)
             {
                 ///check closing tag available
-                if (!Regex.Match(this.emailContent, $"<{element}>.*</{element}>", RegexOptions.Singleline).Success)
+                if (!Regex.Match(this.textContent, $"<{element}>.*</{element}>", RegexOptions.Singleline).Success)
                 {
                     validationStatus = Status.FormattingError;
                     return false;
@@ -134,7 +131,7 @@ namespace SerkoExpense.XmlParser
         private bool ValidateValueFormat(string element, string pattern, out Status validationStatus)
         {
             ///check value matches the expected format
-            if (Regex.Match(this.emailContent, $"<{element}>{pattern}</{element}>", RegexOptions.Singleline).Success)
+            if (Regex.Match(this.textContent, $"<{element}>{pattern}</{element}>", RegexOptions.Singleline).Success)
             {
                 validationStatus = Status.Success;
                 return true;
@@ -150,7 +147,7 @@ namespace SerkoExpense.XmlParser
         /// <returns>extracted element</returns>
         private string ExtractTag(string element)
         {
-            return Regex.Match(this.emailContent, $"<{element}>.*</{element}>", RegexOptions.Singleline).Value;
+            return Regex.Match(this.textContent, $"<{element}>.*</{element}>", RegexOptions.Singleline).Value;
         }
 
         /// <summary>

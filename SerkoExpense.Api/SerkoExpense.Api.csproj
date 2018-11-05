@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.2.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -122,9 +128,9 @@
       <Project>{05853A18-99AF-41C4-9E99-CE45EC927501}</Project>
       <Name>SerkoExpense.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SerkoExpense.XmlParser\SerkoExpense.XmlParser.csproj">
+    <ProjectReference Include="..\SerkoExpense.XmlParser\SerkoExpense.Parser.csproj">
       <Project>{b3ea57f3-eb87-48f6-8f1e-7e14eff949e7}</Project>
-      <Name>SerkoExpense.XmlParser</Name>
+      <Name>SerkoExpense.Parser</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
